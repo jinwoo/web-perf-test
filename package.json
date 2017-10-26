@@ -1,0 +1,43 @@
+{
+  "name": "web-perf-test",
+  "version": "0.1.0",
+  "description": "Automated web performance test using Puppeteer.",
+  "main": "build/src/index.js",
+  "bin": "build/src/index.js",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "build/src"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check": "gts check",
+    "clean": "gts clean",
+    "compile": "tsc -p .",
+    "fix": "gts fix",
+    "start": "node build/src/index.js",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run check"
+  },
+  "keywords": [
+    "performance",
+    "puppeteer",
+    "web"
+  ],
+  "author": "Jinwoo Lee",
+  "license": "Apache-2.0",
+  "repository": "github:jinwoo/web-perf-test",
+  "devDependencies": {
+    "@types/argparse": "^1.0.33",
+    "@types/node": "^9.3.0",
+    "@types/puppeteer": "^0.13.9",
+    "gts": "^0.5.3",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "argparse": "^1.0.9",
+    "puppeteer": "^1.0.0",
+    "simple-statistics": "^5.2.1"
+  }
+}
