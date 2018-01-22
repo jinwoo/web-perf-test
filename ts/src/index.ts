@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import {ArgumentParser} from 'argparse';
 import * as puppeteer from 'puppeteer';
 import * as stats from 'simple-statistics';
