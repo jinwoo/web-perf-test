@@ -7,6 +7,12 @@ of a web site, using
 It measures until the timing data is considered stable and prints out the
 statistics together with a [box plot](https://en.wikipedia.org/wiki/Box_plot).
 
+## Installation
+
+```shell
+$ npm install -g web-perf-test
+```
+
 ## Usage
 
 ```
