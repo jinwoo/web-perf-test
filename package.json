@@ -18,7 +18,8 @@
     "start": "node build/src/index.js",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
-    "posttest": "npm run check"
+    "posttest": "npm run check && npm run license-check",
+    "license-check": "jsgl --local ."
   },
   "keywords": [
     "performance",
@@ -33,6 +34,7 @@
     "@types/node": "^9.3.0",
     "@types/puppeteer": "^0.13.9",
     "gts": "^0.5.3",
+    "js-green-licenses": "^0.4.0",
     "typescript": "^2.6.2"
   },
   "dependencies": {
