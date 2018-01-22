@@ -3,6 +3,8 @@
 import {ArgumentParser} from 'argparse';
 import * as puppeteer from 'puppeteer';
 import * as stats from 'simple-statistics';
+import {URL} from 'url';
+import * as normalizeUrl from 'normalize-url';
 
 import {drawBoxPlot} from './boxplot';
 
@@ -143,9 +145,21 @@ async function measureAverageLoadTime(
   reportLoadTimeStats(loadTimes);
 }
 
+function ensureUrl(url: string): string {
+  return normalizeUrl(url, {
+    stripWWW: false,
+    stripFragment: false,
+    removeTrailingSlash: false,
+    removeQueryParameters: [],
+    sortQueryParameters: false,
+  } as normalizeUrl.Options);
+}
+
 async function main() {
   try {
-    await measureAverageLoadTime(args.url, !args.showChrome);
+    const url = ensureUrl(args.url);
+    console.log(`Measure ${url}`);
+    await measureAverageLoadTime(url, !args.showChrome);
   } catch (err) {
     console.error(err);
   }
