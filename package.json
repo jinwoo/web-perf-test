@@ -1,6 +1,6 @@
 {
   "name": "web-perf-test",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Automated web performance test using Puppeteer.",
   "main": "build/src/index.js",
   "bin": "build/src/index.js",
